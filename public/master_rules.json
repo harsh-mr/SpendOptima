@@ -1,0 +1,2304 @@
+{
+    "cards": [
+        {
+            "id": "hdfc_infinia",
+            "name": "HDFC Infinia Metal",
+            "network": "visa",
+            "issuer": "HDFC",
+            "annual_fee": 12500,
+            "base_reward_rate": 0.033,
+            "reward_currency": "points",
+            "points_value": 1,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.065,
+                        "method": "Buy Zomato voucher via HDFC SmartBuy at 10x points"
+                    }
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.065,
+                        "method": "Buy Swiggy voucher via HDFC SmartBuy at 10x points"
+                    }
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.065,
+                        "method": "Buy Amazon voucher via HDFC SmartBuy at 10x points"
+                    }
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.05,
+                        "method": "Buy Flipkart voucher via HDFC SmartBuy"
+                    }
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.065,
+                        "method": "Buy BigBasket voucher via HDFC SmartBuy at 10x points"
+                    }
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.033,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.05,
+                        "method": "Buy Myntra voucher via HDFC SmartBuy"
+                    }
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.1,
+                        "method": "Book via HDFC SmartBuy travel portal for 10x rewards"
+                    }
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.033,
+                    "voucher_hack": {
+                        "rate": 0.065,
+                        "method": "Buy BMS voucher via HDFC SmartBuy"
+                    }
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.033,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.033,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.033,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.033,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.033
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.033
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.033
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.033
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.033
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.033
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.033
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹3 Lakhs/month or existing HDFC relationship with ₹10L+ savings",
+                "hacks": [
+                    {
+                        "type": "alumni",
+                        "icon": "🎓",
+                        "title": "Alumni Offer",
+                        "description": "Available LTF (Lifetime Free) for alumni of premier institutes.",
+                        "institutes": [
+                            "IIT",
+                            "IIM",
+                            "ISB",
+                            "BITS",
+                            "NIT"
+                        ]
+                    },
+                    {
+                        "type": "corporate",
+                        "icon": "🏢",
+                        "title": "Corporate Program",
+                        "description": "Easier approval for Google, Microsoft, Amazon, Meta employees.",
+                        "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards"
+                    },
+                    {
+                        "type": "spend_based_upgrade",
+                        "icon": "📈",
+                        "title": "Spend-Based Upgrade",
+                        "description": "Spend ₹8L in 6 months on HDFC Regalia Gold to request an upgrade to Infinia."
+                    },
+                    {
+                        "type": "card_to_card",
+                        "icon": "🔄",
+                        "title": "Card-to-Card Upgrade",
+                        "description": "Hold any HDFC card with ₹5L+ limit for 1 year, then request upgrade via NetBanking."
+                    }
+                ],
+                "application_link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/infinia-credit-card"
+            }
+        },
+        {
+            "id": "hdfc_regalia_gold",
+            "name": "HDFC Regalia Gold",
+            "network": "visa",
+            "issuer": "HDFC",
+            "annual_fee": 2500,
+            "base_reward_rate": 0.013,
+            "reward_currency": "points",
+            "points_value": 1,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.045,
+                        "method": "Buy Zomato voucher via HDFC SmartBuy at 5x points"
+                    }
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.045,
+                        "method": "Buy Swiggy voucher via HDFC SmartBuy at 5x points"
+                    }
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.045,
+                        "method": "Buy Amazon voucher via HDFC SmartBuy at 5x points"
+                    }
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.035,
+                        "method": "Buy Flipkart voucher via HDFC SmartBuy"
+                    }
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.045,
+                        "method": "Buy BigBasket voucher via HDFC SmartBuy"
+                    }
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.013,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.035,
+                        "method": "Buy Myntra voucher via HDFC SmartBuy"
+                    }
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.065,
+                        "method": "Book via HDFC SmartBuy travel portal"
+                    }
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.013,
+                    "voucher_hack": {
+                        "rate": 0.045,
+                        "method": "Buy BMS voucher via HDFC SmartBuy"
+                    }
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.013,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.013,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.013,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.013,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.013
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.013
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.013
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.013
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.013
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.013
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.013
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹1.2 Lakhs/month or ₹5L+ fixed deposit with HDFC",
+                "hacks": [
+                    {
+                        "type": "salary_account",
+                        "icon": "💰",
+                        "title": "Salary Account",
+                        "description": "Open HDFC salary account with ₹50K+ monthly credit for easy pre-approved offer."
+                    },
+                    {
+                        "type": "corporate",
+                        "icon": "🏢",
+                        "title": "Corporate Tie-up",
+                        "description": "Available for employees of most MNCs and IT companies.",
+                        "link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards"
+                    },
+                    {
+                        "type": "card_to_card",
+                        "icon": "🔄",
+                        "title": "Card-to-Card Upgrade",
+                        "description": "Hold HDFC Millennia or Regalia for 1 year with ₹3L+ spend, then request upgrade."
+                    }
+                ],
+                "application_link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/regalia-gold-credit-card"
+            }
+        },
+        {
+            "id": "hdfc_millennia",
+            "name": "HDFC Millennia",
+            "network": "visa",
+            "issuer": "HDFC",
+            "annual_fee": 1000,
+            "base_reward_rate": 0.01,
+            "reward_currency": "cashpoints",
+            "points_value": 1,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.01
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹35,000/month. One of the easiest HDFC cards to get.",
+                "hacks": [
+                    {
+                        "type": "salary_account",
+                        "icon": "💰",
+                        "title": "Salary Account",
+                        "description": "Open HDFC salary account — pre-approved offers appear within 3 months."
+                    },
+                    {
+                        "type": "secured",
+                        "icon": "🔒",
+                        "title": "Secured Card Route",
+                        "description": "Get HDFC MoneyBack card against FD, upgrade to Millennia after 6 months."
+                    }
+                ],
+                "application_link": "https://www.hdfcbank.com/personal/pay/cards/credit-cards/millennia-credit-card"
+            }
+        },
+        {
+            "id": "axis_atlas",
+            "name": "Axis Bank Atlas",
+            "network": "visa",
+            "issuer": "Axis",
+            "annual_fee": 5000,
+            "base_reward_rate": 0.02,
+            "reward_currency": "edge_miles",
+            "points_value": 1,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.05,
+                    "voucher_hack": {
+                        "rate": 0.08,
+                        "method": "Book flights via Axis Travel Edge portal for 5x Edge Miles"
+                    }
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.05
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.02
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹1.5 Lakhs/month. Travel-focused super-premium card.",
+                "hacks": [
+                    {
+                        "type": "corporate",
+                        "icon": "🏢",
+                        "title": "Corporate Program",
+                        "description": "Available via Axis corporate tie-ups for IT/consulting professionals.",
+                        "link": "https://www.axisbank.com/retail/cards/credit-card"
+                    },
+                    {
+                        "type": "card_to_card",
+                        "icon": "🔄",
+                        "title": "Upgrade from Axis ACE",
+                        "description": "Hold Axis ACE for 1 year with consistent ₹4L+ spends, call for Atlas upgrade."
+                    }
+                ],
+                "application_link": "https://www.axisbank.com/retail/cards/credit-card/atlas-credit-card"
+            }
+        },
+        {
+            "id": "axis_ace",
+            "name": "Axis Bank ACE",
+            "network": "visa",
+            "issuer": "Axis",
+            "annual_fee": 499,
+            "base_reward_rate": 0.02,
+            "reward_currency": "cashback",
+            "points_value": 1,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.05,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.05,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.05,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.05,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.04,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.04,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.05
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.05
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.04
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹25,000/month. Easy to get. Powered by Google Pay.",
+                "hacks": [
+                    {
+                        "type": "google_pay",
+                        "icon": "📱",
+                        "title": "Google Pay Route",
+                        "description": "Apply directly via Google Pay app for instant approval — no income proof needed for existing GPay users."
+                    },
+                    {
+                        "type": "salary_account",
+                        "icon": "💰",
+                        "title": "Axis Salary Account",
+                        "description": "Axis salary account holders get pre-approved offers frequently."
+                    }
+                ],
+                "application_link": "https://www.axisbank.com/retail/cards/credit-card/ace-credit-card"
+            }
+        },
+        {
+            "id": "sbi_simplyclick",
+            "name": "SBI SimplyCLICK",
+            "network": "visa",
+            "issuer": "SBI",
+            "annual_fee": 499,
+            "base_reward_rate": 0.01,
+            "reward_currency": "points",
+            "points_value": 0.25,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.025,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.025
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.005
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.01
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹20,000/month. Beginner-friendly online shopping card.",
+                "hacks": [
+                    {
+                        "type": "yono",
+                        "icon": "📱",
+                        "title": "YONO App",
+                        "description": "Apply via SBI YONO app — pre-approved for SBI savings account holders."
+                    },
+                    {
+                        "type": "secured",
+                        "icon": "🔒",
+                        "title": "Against Fixed Deposit",
+                        "description": "Open SBI FD of ₹25K+ and apply for secured SBI card, upgrade to SimplyCLICK later."
+                    }
+                ],
+                "application_link": "https://www.sbicard.com/en/personal/credit-cards/shopping/simplyclick-sbi-card.page"
+            }
+        },
+        {
+            "id": "icici_amazon_pay",
+            "name": "ICICI Amazon Pay",
+            "network": "visa",
+            "issuer": "ICICI",
+            "annual_fee": 0,
+            "base_reward_rate": 0.01,
+            "reward_currency": "amazon_pay_balance",
+            "points_value": 1,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.05,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.02,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.02
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "No income requirement. Lifetime free. Apply via Amazon app.",
+                "hacks": [
+                    {
+                        "type": "amazon_app",
+                        "icon": "📦",
+                        "title": "Apply via Amazon",
+                        "description": "Easiest route: Open Amazon app → Pay section → Apply for Amazon Pay ICICI card. Instant approval for Prime members."
+                    }
+                ],
+                "application_link": "https://www.amazon.in/ap/signin?_encoding=UTF8&openid.mode=checkid_setup"
+            }
+        },
+        {
+            "id": "amex_mrcc",
+            "name": "Amex Membership Rewards",
+            "network": "amex",
+            "issuer": "Amex",
+            "annual_fee": 1000,
+            "base_reward_rate": 0.005,
+            "reward_currency": "mr_points",
+            "points_value": 0.3,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.005,
+                    "voucher_hack": {
+                        "rate": 0.04,
+                        "method": "Use 18x Milestone reward points + Amex offers on Zomato"
+                    }
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.005,
+                    "voucher_hack": {
+                        "rate": 0.04,
+                        "method": "Use 18x Milestone reward points + transfer to Marriott"
+                    }
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.005,
+                    "voucher_hack": {
+                        "rate": 0.035,
+                        "method": "Buy Amazon GC via Amex Reward Multiplier at 5x MR"
+                    }
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.005,
+                    "voucher_hack": {
+                        "rate": 0.035,
+                        "method": "Buy Flipkart GC via Amex Reward Multiplier at 5x MR"
+                    }
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.005,
+                    "voucher_hack": {
+                        "rate": 0.06,
+                        "method": "Book via Amex Travel portal for 5x MR + milestone bonus"
+                    }
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.005,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.005
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.005
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.02
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.005
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.005
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.005
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.005
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.005
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹6 Lakhs/year. Good starter Amex card.",
+                "hacks": [
+                    {
+                        "type": "referral",
+                        "icon": "🤝",
+                        "title": "Referral Bonus",
+                        "description": "Get referred by existing Amex holder for waived first-year fee + bonus MR points."
+                    },
+                    {
+                        "type": "upgrade",
+                        "icon": "📈",
+                        "title": "Upgrade Path",
+                        "description": "Great stepping stone — after 1 year of ₹4L spend, eligible for Amex Platinum upgrade."
+                    }
+                ],
+                "application_link": "https://www.americanexpress.com/in/credit-cards/membership-rewards-credit-card/"
+            }
+        },
+        {
+            "id": "amex_platinum",
+            "name": "Amex Platinum Travel",
+            "network": "amex",
+            "issuer": "Amex",
+            "annual_fee": 3500,
+            "base_reward_rate": 0.01,
+            "reward_currency": "mr_points",
+            "points_value": 0.5,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.01,
+                    "voucher_hack": {
+                        "rate": 0.05,
+                        "method": "Use Amex Reward Multiplier + milestone acceleration"
+                    }
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.01,
+                    "voucher_hack": {
+                        "rate": 0.04,
+                        "method": "Buy Amazon GC via Amex Reward Multiplier"
+                    }
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.01,
+                    "voucher_hack": {
+                        "rate": 0.04,
+                        "method": "Buy Flipkart GC via Amex Reward Multiplier"
+                    }
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.01,
+                    "voucher_hack": {
+                        "rate": 0.07,
+                        "method": "Book via Amex Travel Online at 5x MR points"
+                    }
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.05
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.01
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "Net Income > ₹9 Lakhs/year. Good for travel spenders.",
+                "hacks": [
+                    {
+                        "type": "referral",
+                        "icon": "🤝",
+                        "title": "Referral Bonus",
+                        "description": "Get referred by existing Amex holder for bonus MR points + fee waiver."
+                    },
+                    {
+                        "type": "upgrade",
+                        "icon": "📈",
+                        "title": "Upgrade from MRCC",
+                        "description": "Spend ₹1.9L in 4 months on Amex MRCC to get Platinum Travel upgrade offer."
+                    }
+                ],
+                "application_link": "https://www.americanexpress.com/in/credit-cards/platinum-travel-credit-card/"
+            }
+        },
+        {
+            "id": "onecard",
+            "name": "OneCard Metal",
+            "network": "visa",
+            "issuer": "OneCard",
+            "annual_fee": 0,
+            "base_reward_rate": 0.01,
+            "reward_currency": "cashback",
+            "points_value": 1,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.05,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.05
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.01
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "No fixed income requirement. Credit score > 750 preferred. Lifetime free metal card.",
+                "hacks": [
+                    {
+                        "type": "app_apply",
+                        "icon": "📱",
+                        "title": "App-Only Application",
+                        "description": "Download OneCard app → Link Aadhaar + PAN → Get instant decision. Works best with CIBIL 750+."
+                    }
+                ],
+                "application_link": "https://www.getonecard.app/"
+            }
+        },
+        {
+            "id": "idfc_first_classic",
+            "name": "IDFC FIRST Classic",
+            "network": "visa",
+            "issuer": "IDFC",
+            "annual_fee": 0,
+            "base_reward_rate": 0.005,
+            "reward_currency": "points",
+            "points_value": 0.25,
+            "merchants": [
+                {
+                    "name": "Zomato",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Swiggy",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Amazon",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Flipkart",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BigBasket",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Blinkit",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Myntra",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "MakeMyTrip",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "BookMyShow",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Uber",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Ola",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Jio",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                },
+                {
+                    "name": "Airtel",
+                    "direct_rate": 0.01,
+                    "voucher_hack": null
+                }
+            ],
+            "categories": [
+                {
+                    "name": "Food & Delivery",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Shopping",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Travel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Entertainment",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Groceries",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Telecom",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Fuel",
+                    "direct_rate": 0.01
+                },
+                {
+                    "name": "Utilities",
+                    "direct_rate": 0.01
+                }
+            ],
+            "acquisition": {
+                "official_criteria": "No income requirement. Lifetime free. Great starter card with no annual fee ever.",
+                "hacks": [
+                    {
+                        "type": "savings_account",
+                        "icon": "🏦",
+                        "title": "IDFC Savings Account",
+                        "description": "Open IDFC FIRST savings account (zero balance) — pre-approved card offer within 1-2 months."
+                    },
+                    {
+                        "type": "app_apply",
+                        "icon": "📱",
+                        "title": "Instant Apply",
+                        "description": "Apply via IDFC FIRST app → Aadhaar e-KYC → Instant virtual card."
+                    }
+                ],
+                "application_link": "https://www.idfcfirstbank.com/credit-card/classic"
+            }
+        }
+    ],
+    "merchant_categories": {
+        "Zomato": "Food & Delivery",
+        "Swiggy": "Food & Delivery",
+        "Amazon": "Shopping",
+        "Flipkart": "Shopping",
+        "BigBasket": "Groceries",
+        "Blinkit": "Groceries",
+        "Myntra": "Shopping",
+        "MakeMyTrip": "Travel",
+        "BookMyShow": "Entertainment",
+        "Uber": "Travel",
+        "Ola": "Travel",
+        "Jio": "Telecom",
+        "Airtel": "Telecom",
+        "BlueSmart": "Travel",
+        "Rapido": "Travel",
+        "Nykaa": "Shopping",
+        "Croma": "Shopping",
+        "IRCTC": "Travel",
+        "PharmEasy": "Shopping",
+        "1mg": "Shopping",
+        "Dunzo": "Groceries",
+        "Zepto": "Groceries",
+        "Netflix": "Entertainment",
+        "Hotstar": "Entertainment",
+        "Spotify": "Entertainment",
+        "YouTube Premium": "Entertainment",
+        "Reliance": "Shopping",
+        "DMart": "Groceries",
+        "SpiceJet": "Travel",
+        "IndiGo": "Travel",
+        "OYO": "Travel",
+        "Paytm": "Utilities",
+        "GooglePay": "Utilities",
+        "Singapore Airlines": "Travel",
+        "Vistara": "Travel",
+        "Air India": "Travel",
+        "Emirates": "Travel",
+        "British Airways": "Travel",
+        "Lufthansa": "Travel",
+        "Thai Airways": "Travel",
+        "United Airlines": "Travel",
+        "Qatar Airways": "Travel",
+        "Etihad Airways": "Travel"
+    },
+    "merchant_keywords": {
+        "Zomato": [
+            "zomto",
+            "zomatoo",
+            "food delivery",
+            "food order",
+            "eating out",
+            "restaurant"
+        ],
+        "Swiggy": [
+            "swigy",
+            "swiggie",
+            "food card",
+            "food delivery",
+            "restaurant",
+            "eating out"
+        ],
+        "Amazon": [
+            "amazn",
+            "amzn",
+            "amazone",
+            "online shopping",
+            "ecommerce"
+        ],
+        "Flipkart": [
+            "flipcart",
+            "filpkart",
+            "filpcart",
+            "flipcard",
+            "online shopping",
+            "ecommerce"
+        ],
+        "BigBasket": [
+            "big basket",
+            "bigbsket",
+            "grocery delivery",
+            "groceries online"
+        ],
+        "Blinkit": [
+            "blink it",
+            "blinkitt",
+            "grocery delivery",
+            "instant delivery",
+            "quick commerce"
+        ],
+        "Myntra": [
+            "mintra",
+            "myntraa",
+            "fashion",
+            "clothing",
+            "shopping online"
+        ],
+        "MakeMyTrip": [
+            "make my trip",
+            "mmt",
+            "travel booking",
+            "flight booking",
+            "hotel booking"
+        ],
+        "BookMyShow": [
+            "book my show",
+            "bms",
+            "movies",
+            "movie tickets",
+            "events",
+            "cinema"
+        ],
+        "Uber": [
+            "ubar",
+            "cab",
+            "taxi",
+            "ride",
+            "ride hailing"
+        ],
+        "Ola": [
+            "olaa",
+            "cab",
+            "taxi",
+            "ride",
+            "ride hailing"
+        ],
+        "Jio": [
+            "jioo",
+            "reliance jio",
+            "mobile recharge",
+            "telecom",
+            "phone bill"
+        ],
+        "Airtel": [
+            "airtle",
+            "artel",
+            "mobile recharge",
+            "telecom",
+            "phone bill"
+        ],
+        "Nykaa": [
+            "nikaa",
+            "nykka",
+            "beauty",
+            "cosmetics",
+            "makeup",
+            "skincare"
+        ],
+        "Croma": [
+            "crooma",
+            "electronics",
+            "gadgets",
+            "appliances",
+            "tech"
+        ],
+        "IRCTC": [
+            "irctc",
+            "indian railways",
+            "train ticket",
+            "train booking",
+            "rail"
+        ],
+        "PharmEasy": [
+            "pharmeasy",
+            "pharmacy",
+            "medicine",
+            "medical",
+            "health"
+        ],
+        "1mg": [
+            "onemg",
+            "one mg",
+            "pharmacy",
+            "medicine",
+            "medical"
+        ],
+        "Dunzo": [
+            "dunzoo",
+            "grocery delivery",
+            "quick delivery"
+        ],
+        "Zepto": [
+            "zeepto",
+            "grocery delivery",
+            "quick commerce",
+            "instant delivery"
+        ],
+        "Netflix": [
+            "netflex",
+            "netflicks",
+            "streaming",
+            "ott",
+            "movies"
+        ],
+        "Hotstar": [
+            "hotstart",
+            "disney plus",
+            "disney+",
+            "streaming",
+            "ott"
+        ],
+        "Spotify": [
+            "spotfy",
+            "spotifiy",
+            "music",
+            "podcast",
+            "streaming"
+        ],
+        "YouTube Premium": [
+            "youtube",
+            "yt premium",
+            "streaming",
+            "video"
+        ],
+        "Reliance": [
+            "relience",
+            "reliance retail",
+            "jio mart",
+            "shopping"
+        ],
+        "DMart": [
+            "d mart",
+            "d-mart",
+            "dmart",
+            "grocery",
+            "supermarket"
+        ],
+        "SpiceJet": [
+            "spice jet",
+            "spicejet",
+            "budget airline",
+            "domestic flight"
+        ],
+        "IndiGo": [
+            "indigo",
+            "indygo",
+            "6e",
+            "budget airline",
+            "domestic flight"
+        ],
+        "OYO": [
+            "oyo rooms",
+            "hotel",
+            "hotel booking",
+            "stay"
+        ],
+        "Paytm": [
+            "paytim",
+            "pay tm",
+            "wallet",
+            "recharge",
+            "bill payment"
+        ],
+        "GooglePay": [
+            "google pay",
+            "gpay",
+            "g pay",
+            "upi",
+            "payment"
+        ],
+        "BlueSmart": [
+            "blue smart",
+            "bluesmart",
+            "ev cab",
+            "electric cab"
+        ],
+        "Rapido": [
+            "rapdo",
+            "bike taxi",
+            "auto",
+            "ride"
+        ],
+        "Singapore Airlines": [
+            "sq",
+            "singapore air",
+            "krisflyer",
+            "sia"
+        ],
+        "Vistara": [
+            "vistaar",
+            "club vistara",
+            "tata airlines"
+        ],
+        "Air India": [
+            "air india",
+            "ai",
+            "flying returns",
+            "maharaja"
+        ],
+        "Emirates": [
+            "emirats",
+            "emirates airlines",
+            "ek",
+            "dubai airline"
+        ],
+        "British Airways": [
+            "ba",
+            "british air",
+            "avios"
+        ],
+        "Lufthansa": [
+            "lufthansa airlines",
+            "lh",
+            "miles and more"
+        ],
+        "Thai Airways": [
+            "thai air",
+            "tg",
+            "royal orchid"
+        ],
+        "United Airlines": [
+            "united air",
+            "ua",
+            "mileageplus"
+        ],
+        "Qatar Airways": [
+            "qatar air",
+            "qr",
+            "privilege club"
+        ],
+        "Etihad Airways": [
+            "etihad",
+            "ey",
+            "guest miles"
+        ]
+    },
+    "card_keywords": {
+        "hdfc_infinia": [
+            "infinia",
+            "inifina",
+            "inifnia",
+            "infina",
+            "premium card",
+            "super premium",
+            "invite only",
+            "10x",
+            "smartbuy king",
+            "best card india"
+        ],
+        "hdfc_regalia_gold": [
+            "regalia",
+            "rgalia",
+            "regalia gold",
+            "travel card",
+            "5x",
+            "smartbuy"
+        ],
+        "hdfc_millennia": [
+            "millennia",
+            "millennia",
+            "milennia",
+            "cashback",
+            "online card",
+            "hdfc basic"
+        ],
+        "axis_atlas": [
+            "atlas",
+            "atals",
+            "travel card",
+            "edge miles",
+            "travel edge",
+            "axis travel"
+        ],
+        "axis_ace": [
+            "ace",
+            "cashback card",
+            "axis cashback",
+            "google pay card",
+            "gpay card",
+            "free card"
+        ],
+        "sbi_simplyclick": [
+            "simply click",
+            "simplyclick",
+            "sbi online",
+            "online card"
+        ],
+        "icici_amazon_pay": [
+            "amazon card",
+            "amazon pay card",
+            "icici amazon",
+            "shopping card"
+        ],
+        "amex_mrcc": [
+            "amex mrcc",
+            "membership rewards",
+            "amex gold",
+            "amex basic"
+        ],
+        "amex_platinum": [
+            "amex platinum",
+            "amex plat",
+            "platinum travel",
+            "amex travel",
+            "luxury card",
+            "centurion lounges"
+        ],
+        "onecard": [
+            "one card",
+            "metal card",
+            "fi card",
+            "lifetime free"
+        ],
+        "idfc_first_classic": [
+            "idfc classic",
+            "idfc first",
+            "idfc card",
+            "salary card",
+            "first classic"
+        ]
+    },
+    "flight_data": {
+        "card_caps": {
+            "hdfc_infinia": {
+                "smartbuy_monthly_points": 15000,
+                "smartbuy_point_value": 1,
+                "monthly_cap_inr": 100000,
+                "multiplier": "10x",
+                "base_multiplier": "3.3x",
+                "reset_rule": "calendar_month_start",
+                "portal": "HDFC SmartBuy"
+            },
+            "hdfc_regalia_gold": {
+                "smartbuy_monthly_points": 7500,
+                "smartbuy_point_value": 1,
+                "monthly_cap_inr": 75000,
+                "multiplier": "5x",
+                "base_multiplier": "1.3x",
+                "reset_rule": "calendar_month_start",
+                "portal": "HDFC SmartBuy"
+            },
+            "hdfc_millennia": {
+                "smartbuy_monthly_points": null,
+                "smartbuy_point_value": null,
+                "monthly_cap_inr": null,
+                "multiplier": null,
+                "base_multiplier": null,
+                "reset_rule": null,
+                "portal": null
+            },
+            "axis_atlas": {
+                "smartbuy_monthly_points": null,
+                "smartbuy_point_value": 1,
+                "monthly_cap_inr": null,
+                "multiplier": "5x",
+                "base_multiplier": "2x",
+                "reset_rule": null,
+                "portal": "Axis Travel Edge"
+            },
+            "axis_ace": {
+                "smartbuy_monthly_points": null,
+                "smartbuy_point_value": null,
+                "monthly_cap_inr": null,
+                "multiplier": null,
+                "base_multiplier": null,
+                "reset_rule": null,
+                "portal": null
+            }
+        },
+        "transfer_partners": {
+            "hdfc_infinia": [
+                {
+                    "airline_id": "singapore_airlines",
+                    "program": "Krisflyer",
+                    "ratio_from": 1,
+                    "ratio_to": 1,
+                    "estimated_value_inr": 1.50,
+                    "min_transfer": 2000
+                },
+                {
+                    "airline_id": "british_airways",
+                    "program": "Avios",
+                    "ratio_from": 1,
+                    "ratio_to": 1,
+                    "estimated_value_inr": 1.20,
+                    "min_transfer": 2000
+                },
+                {
+                    "airline_id": "air_india",
+                    "program": "Flying Returns",
+                    "ratio_from": 1,
+                    "ratio_to": 1,
+                    "estimated_value_inr": 0.80,
+                    "min_transfer": 2000
+                },
+                {
+                    "airline_id": "emirates",
+                    "program": "Skywards",
+                    "ratio_from": 1,
+                    "ratio_to": 1,
+                    "estimated_value_inr": 1.10,
+                    "min_transfer": 2000
+                },
+                {
+                    "airline_id": "etihad",
+                    "program": "Guest Miles",
+                    "ratio_from": 1,
+                    "ratio_to": 1,
+                    "estimated_value_inr": 1.00,
+                    "min_transfer": 2000
+                }
+            ],
+            "hdfc_regalia_gold": [
+                {
+                    "airline_id": "singapore_airlines",
+                    "program": "Krisflyer",
+                    "ratio_from": 1,
+                    "ratio_to": 1,
+                    "estimated_value_inr": 1.50,
+                    "min_transfer": 2000
+                },
+                {
+                    "airline_id": "air_india",
+                    "program": "Flying Returns",
+                    "ratio_from": 1,
+                    "ratio_to": 1,
+                    "estimated_value_inr": 0.80,
+                    "min_transfer": 2000
+                }
+            ],
+            "axis_atlas": [
+                {
+                    "airline_id": "singapore_airlines",
+                    "program": "Krisflyer",
+                    "ratio_from": 5,
+                    "ratio_to": 4,
+                    "estimated_value_inr": 1.20,
+                    "min_transfer": 1000
+                },
+                {
+                    "airline_id": "united_airlines",
+                    "program": "MileagePlus",
+                    "ratio_from": 5,
+                    "ratio_to": 4,
+                    "estimated_value_inr": 1.10,
+                    "min_transfer": 1000
+                },
+                {
+                    "airline_id": "air_india",
+                    "program": "Flying Returns",
+                    "ratio_from": 5,
+                    "ratio_to": 4,
+                    "estimated_value_inr": 0.80,
+                    "min_transfer": 1000
+                },
+                {
+                    "airline_id": "etihad",
+                    "program": "Guest Miles",
+                    "ratio_from": 5,
+                    "ratio_to": 4,
+                    "estimated_value_inr": 1.00,
+                    "min_transfer": 1000
+                }
+            ]
+        },
+        "airlines": [
+            {
+                "id": "singapore_airlines",
+                "name": "Singapore Airlines",
+                "program": "Krisflyer",
+                "alliance": "Star Alliance",
+                "alliance_partners": [
+                    "air_india",
+                    "united_airlines",
+                    "lufthansa",
+                    "thai_airways"
+                ],
+                "sample_awards": {
+                    "economy_domestic": 15000,
+                    "business_domestic": 30000,
+                    "economy_intl_short": 25000,
+                    "business_intl_short": 60000,
+                    "economy_intl_long": 40000,
+                    "business_intl_long": 90000
+                }
+            },
+            {
+                "id": "vistara",
+                "name": "Vistara",
+                "program": "Club Vistara",
+                "alliance": "None (Merged with Air India)",
+                "alliance_partners": [],
+                "sample_awards": {
+                    "economy_domestic": 3000,
+                    "business_domestic": 6000,
+                    "economy_intl_short": 7500,
+                    "business_intl_short": 15000
+                }
+            },
+            {
+                "id": "air_india",
+                "name": "Air India",
+                "program": "Flying Returns",
+                "alliance": "Star Alliance",
+                "alliance_partners": [
+                    "singapore_airlines",
+                    "united_airlines",
+                    "lufthansa",
+                    "thai_airways"
+                ],
+                "sample_awards": {
+                    "economy_domestic": 10000,
+                    "business_domestic": 20000,
+                    "economy_intl_short": 20000,
+                    "business_intl_short": 50000,
+                    "economy_intl_long": 35000,
+                    "business_intl_long": 80000
+                }
+            },
+            {
+                "id": "british_airways",
+                "name": "British Airways",
+                "program": "Avios",
+                "alliance": "Oneworld",
+                "alliance_partners": [
+                    "qatar_airways"
+                ],
+                "sample_awards": {
+                    "economy_intl_short": 13000,
+                    "business_intl_short": 25000,
+                    "economy_intl_long": 26000,
+                    "business_intl_long": 60000
+                }
+            },
+            {
+                "id": "emirates",
+                "name": "Emirates",
+                "program": "Skywards",
+                "alliance": "None",
+                "alliance_partners": [],
+                "sample_awards": {
+                    "economy_intl_short": 20000,
+                    "business_intl_short": 50000,
+                    "economy_intl_long": 40000,
+                    "business_intl_long": 85000
+                }
+            },
+            {
+                "id": "united_airlines",
+                "name": "United Airlines",
+                "program": "MileagePlus",
+                "alliance": "Star Alliance",
+                "alliance_partners": [
+                    "singapore_airlines",
+                    "air_india",
+                    "lufthansa",
+                    "thai_airways"
+                ],
+                "sample_awards": {
+                    "economy_intl_short": 17500,
+                    "business_intl_short": 40000,
+                    "economy_intl_long": 35000,
+                    "business_intl_long": 80000
+                }
+            },
+            {
+                "id": "qatar_airways",
+                "name": "Qatar Airways",
+                "program": "Privilege Club",
+                "alliance": "Oneworld",
+                "alliance_partners": [
+                    "british_airways"
+                ],
+                "sample_awards": {
+                    "economy_intl_short": 20000,
+                    "business_intl_short": 45000,
+                    "economy_intl_long": 40000,
+                    "business_intl_long": 90000
+                }
+            },
+            {
+                "id": "etihad",
+                "name": "Etihad Airways",
+                "program": "Guest Miles",
+                "alliance": "None",
+                "alliance_partners": [],
+                "sample_awards": {
+                    "economy_intl_short": 18000,
+                    "business_intl_short": 45000,
+                    "economy_intl_long": 36000,
+                    "business_intl_long": 88000
+                }
+            },
+            {
+                "id": "lufthansa",
+                "name": "Lufthansa",
+                "program": "Miles & More",
+                "alliance": "Star Alliance",
+                "alliance_partners": [
+                    "singapore_airlines",
+                    "air_india",
+                    "united_airlines",
+                    "thai_airways"
+                ],
+                "sample_awards": {
+                    "economy_intl_short": 15000,
+                    "business_intl_short": 35000,
+                    "economy_intl_long": 35000,
+                    "business_intl_long": 85000
+                }
+            },
+            {
+                "id": "thai_airways",
+                "name": "Thai Airways",
+                "program": "Royal Orchid Plus",
+                "alliance": "Star Alliance",
+                "alliance_partners": [
+                    "singapore_airlines",
+                    "air_india",
+                    "united_airlines",
+                    "lufthansa"
+                ],
+                "sample_awards": {
+                    "economy_intl_short": 15000,
+                    "business_intl_short": 40000,
+                    "economy_intl_long": 30000,
+                    "business_intl_long": 75000
+                }
+            },
+            {
+                "id": "indigo",
+                "name": "IndiGo",
+                "program": "6E Rewards",
+                "alliance": "None",
+                "alliance_partners": [],
+                "sample_awards": {
+                    "economy_domestic": 5000
+                }
+            },
+            {
+                "id": "spicejet",
+                "name": "SpiceJet",
+                "program": "SpiceClub",
+                "alliance": "None",
+                "alliance_partners": [],
+                "sample_awards": {
+                    "economy_domestic": 4000
+                }
+            }
+        ],
+        "flight_portals": [
+            {
+                "id": "hdfc_smartbuy",
+                "name": "HDFC SmartBuy",
+                "url": "https://smartbuy.hdfcbank.com",
+                "supported_cards": [
+                    "hdfc_infinia",
+                    "hdfc_regalia_gold",
+                    "hdfc_millennia"
+                ],
+                "booking_type": "flight",
+                "reward_multiplier": {
+                    "hdfc_infinia": {
+                        "multiplier": 10,
+                        "rate": 0.165,
+                        "label": "10x Points (₹1 = 10RP)"
+                    },
+                    "hdfc_regalia_gold": {
+                        "multiplier": 5,
+                        "rate": 0.065,
+                        "label": "5x Points"
+                    },
+                    "hdfc_millennia": {
+                        "multiplier": 1,
+                        "rate": 0.01,
+                        "label": "1% CashPoints"
+                    }
+                }
+            },
+            {
+                "id": "axis_travel_edge",
+                "name": "Axis Travel Edge",
+                "url": "https://traveledge.axisbank.com",
+                "supported_cards": [
+                    "axis_atlas"
+                ],
+                "booking_type": "flight",
+                "reward_multiplier": {
+                    "axis_atlas": {
+                        "multiplier": 5,
+                        "rate": 0.05,
+                        "label": "5x Edge Miles"
+                    }
+                }
+            }
+        ]
+    }
+}

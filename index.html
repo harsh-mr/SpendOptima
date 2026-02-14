@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpendOptima — Maximize Your Credit Card Rewards</title>
+  <meta name="description"
+    content="Find the best credit card for every merchant. Compare direct swipe vs voucher hacks. Get personalized reward recommendations based on your wallet." />
+  <meta name="keywords"
+    content="credit card rewards, best card for Swiggy, best card for Zomato, HDFC SmartBuy, credit card optimizer, India" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/index.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- Animated Background -->
+    <div class="bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header-inner">
+        <a href="#/" class="logo">
+          <span class="logo-icon">💳</span>
+          <span class="logo-text">Spend<span class="logo-accent">Optima</span></span>
+        </a>
+        <nav class="header-nav">
+          <button class="wallet-pill" id="walletPill" aria-label="My Wallet">
+            <span class="wallet-pill-icon">👛</span>
+            <span class="wallet-pill-label">My Wallet</span>
+            <span class="wallet-pill-count" id="walletCount">0</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="mainContent">
+      <!-- Mode Tabs (top of page) -->
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-tab active" data-mode="merchant" id="tabMerchant">
+          <span class="mode-tab-icon">🛒</span>
+          <span>Merchant Calculator</span>
+        </button>
+        <button class="mode-tab" data-mode="flights" id="tabFlights">
+          <span class="mode-tab-icon">✈️</span>
+          <span>Flight Maximizer</span>
+        </button>
+      </div>
+
+      <!-- Hero / Search Section -->
+      <section class="hero" id="heroSection">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-title-line">Maximize Every</span>
+            <span class="hero-title-line hero-title-gradient">Credit Card Swipe</span>
+          </h1>
+          <p class="hero-subtitle">Find the best card for any merchant. Compare direct swipe vs voucher hacks. Save more
+            on every transaction.</p>
+
+          <div class="search-box" id="searchBox">
+            <div class="search-row">
+              <div class="search-field search-merchant">
+                <label class="search-label" for="merchantInput">Merchant / Store</label>
+                <div class="search-input-wrap">
+                  <span class="search-icon">🔍</span>
+                  <input type="text" id="merchantInput" class="search-input"
+                    placeholder="e.g. Zomato, Amazon, Swiggy..." autocomplete="off" />
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+              </div>
+              <div class="search-field search-amount">
+                <label class="search-label" for="amountInput">Amount (₹)</label>
+                <div class="search-input-wrap">
+                  <span class="search-icon">₹</span>
+                  <input type="number" id="amountInput" class="search-input" placeholder="1000" min="1" value="1000" />
+                </div>
+              </div>
+              <button class="search-btn" id="searchBtn">
+                <span>Calculate</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Section (Merchant) -->
+      <section class="results-section hidden" id="resultsSection">
+        <!-- Populated by JS -->
+      </section>
+
+      <!-- Flight Maximizer Section -->
+      <section class="flights-section hidden" id="flightsSection">
+        <div class="flight-input-panel">
+          <div class="flight-input-header">
+            <h2 class="flight-input-title">✈️ Flight Maximizer</h2>
+            <p class="flight-input-subtitle">Compare Portal vs Transfer vs Direct — find the cheapest way to fly.</p>
+          </div>
+          <div class="flight-input-row">
+            <div class="search-field flight-airline-field">
+              <label class="search-label" for="airlineInput">Airline</label>
+              <div class="search-input-wrap">
+                <span class="search-icon">✈️</span>
+                <input type="text" id="airlineInput" class="search-input"
+                  placeholder="e.g. Singapore Airlines, Vistara..." autocomplete="off" />
+              </div>
+              <div class="search-suggestions" id="airlineSuggestions"></div>
+            </div>
+            <div class="search-field">
+              <label class="search-label" for="flightCostInput">Ticket Cost (₹)</label>
+              <div class="search-input-wrap">
+                <span class="search-icon">₹</span>
+                <input type="number" id="flightCostInput" class="search-input" placeholder="80000" min="1" />
+              </div>
+            </div>
+            <div class="search-field">
+              <label class="search-label" for="milesInput">Miles Required <span
+                  class="label-optional">(optional)</span></label>
+              <div class="search-input-wrap">
+                <span class="search-icon">🎯</span>
+                <input type="number" id="milesInput" class="search-input" placeholder="e.g. 40000" min="0" />
+              </div>
+            </div>
+            <button class="search-btn flight-calc-btn" id="flightCalcBtn">
+              <span>Maximize</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Flight Results -->
+        <div class="flight-results hidden" id="flightResults">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Merchant Page Section -->
+      <section class="merchant-page hidden" id="merchantPage">
+        <!-- Populated by JS -->
+      </section>
+    </main>
+
+    <!-- Onboarding Modal -->
+    <div class="modal-overlay hidden" id="onboardingModal">
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-badge">🚀 Welcome to SpendOptima</div>
+          <h2 class="modal-title">Set Up Your Wallet</h2>
+          <p class="modal-subtitle">Select the credit cards you already own for personalized recommendations.</p>
+        </div>
+        <div class="modal-body">
+          <div class="card-grid" id="cardGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn-primary" id="saveWalletBtn">
+            <span>Save & Start</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <button class="modal-btn-secondary" id="skipWalletBtn">Skip for now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wallet Edit Modal -->
+    <div class="modal-overlay hidden" id="walletModal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 class="modal-title">Edit Your Wallet</h2>
+          <p class="modal-subtitle">Update the cards in your collection.</p>
+          <button class="modal-close" id="walletModalClose">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="card-grid" id="walletCardGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn-primary" id="updateWalletBtn">
+            <span>Update Wallet</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
