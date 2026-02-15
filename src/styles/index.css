@@ -1643,6 +1643,124 @@ body {
   font-weight: 500;
 }
 
+/* Card-based split suggestion in cap warning */
+.cap-card-split {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.08), rgba(96, 165, 250, 0.08));
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+}
+
+.cap-split-content {
+  flex: 1;
+}
+
+.cap-split-title {
+  font-size: 0.9rem;
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.cap-split-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.cap-split-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+}
+
+.cap-split-card {
+  color: var(--text-primary);
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.cap-split-portal {
+  color: var(--text-tertiary);
+  font-size: 0.78rem;
+  min-width: 100px;
+}
+
+.cap-split-amount {
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.cap-split-earn {
+  color: var(--accent-green);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.cap-split-total {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding-top: var(--space-xs);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cap-split-total strong {
+  color: var(--accent-green);
+}
+
+/* Monthly split (secondary fallback) */
+.cap-monthly-split {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  opacity: 0.7;
+  font-size: 0.82rem;
+}
+
+.cap-monthly-icon {
+  flex-shrink: 0;
+}
+
+.cap-monthly-split p {
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  font-size: 0.82rem;
+}
+
+/* Miles deduction note in cap warning */
+.cap-miles-note {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  align-items: center;
+}
+
+.cap-miles-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.cap-miles-note p {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
 /* ---- Partner Lookup ---- */
 .partner-lookup {
   margin-top: var(--space-xl);
@@ -1855,6 +1973,702 @@ body {
 
   .trinity-amount {
     font-size: 1.4rem;
+  }
+}
+
+/* ======================================================
+   Net-Cost Flight Search Styles
+   ====================================================== */
+
+/* ---- Airport Swap Button ---- */
+.fs-swap-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-glass-strong);
+  border: 1px solid var(--border-color);
+  color: var(--accent-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.fs-swap-btn:hover {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  transform: rotate(180deg);
+}
+
+.flight-airport-field {
+  flex: 1;
+  min-width: 180px;
+}
+
+/* ---- Net Price Toggle ---- */
+.fs-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.fs-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.fs-toggle-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.fs-toggle-switch {
+  position: relative;
+  width: 48px;
+  height: 26px;
+}
+
+.fs-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.fs-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-glass-strong);
+  border: 1px solid var(--border-color);
+  border-radius: 26px;
+  transition: all 0.3s ease;
+}
+
+.fs-toggle-slider::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.fs-toggle-switch input:checked+.fs-toggle-slider {
+  background: rgba(52, 211, 153, 0.2);
+  border-color: var(--accent-green);
+}
+
+.fs-toggle-switch input:checked+.fs-toggle-slider::before {
+  transform: translateX(22px);
+  background: var(--accent-green);
+}
+
+.fs-toggle-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ---- Flight Search Results Header ---- */
+.flight-search-results {
+  margin-top: var(--space-xl);
+}
+
+.fs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-lg);
+}
+
+.fs-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.fs-count {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: var(--space-sm);
+}
+
+.fs-sort-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* ---- Flight Card ---- */
+.fs-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.fs-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.fs-card-winner {
+  border-color: var(--accent-green);
+  box-shadow: var(--shadow-glow-green);
+}
+
+.fs-winner-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent-green);
+  color: #000;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 14px;
+  border-radius: 0 var(--radius-lg) 0 var(--radius-md);
+}
+
+.fs-card-main {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 0.8fr 1.2fr;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+}
+
+/* Airline info */
+.fs-airline-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.fs-flight-no {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Schedule */
+.fs-schedule {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.fs-time {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.fs-route-line {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  min-width: 60px;
+}
+
+.fs-route-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  z-index: 1;
+}
+
+.fs-route-bar {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary));
+}
+
+.fs-stop-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-amber);
+  border: 2px solid var(--bg-card);
+  z-index: 2;
+}
+
+/* Duration */
+.fs-duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.fs-stops {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Pricing */
+.fs-pricing {
+  text-align: right;
+}
+
+.fs-sticker-price {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.fs-net-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-green);
+  font-variant-numeric: tabular-nums;
+}
+
+.fs-net-price.fs-no-savings {
+  color: var(--text-primary);
+}
+
+.fs-savings-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  background: var(--accent-green-dim);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-top: 4px;
+}
+
+/* ---- Card Footer ---- */
+.fs-card-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-xl);
+  background: var(--bg-glass);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.78rem;
+}
+
+.fs-card-rec {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.fs-card-route {
+  color: var(--text-muted);
+}
+
+.fs-cap-badge {
+  background: var(--accent-amber-dim);
+  color: var(--accent-amber);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.fs-evb-btn {
+  margin-left: auto;
+  background: var(--bg-glass-strong);
+  border: 1px solid var(--border-color);
+  color: var(--accent-tertiary);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fs-evb-btn:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+}
+
+/* ---- Earn vs Burn Drawer ---- */
+.fs-evb-drawer {
+  border-top: 1px solid var(--border-color);
+}
+
+.evb-content {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.evb-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.evb-option {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  transition: all 0.2s ease;
+}
+
+.evb-option.evb-best {
+  border-color: var(--accent-green);
+  background: rgba(52, 211, 153, 0.05);
+}
+
+.evb-option.evb-unavailable {
+  opacity: 0.5;
+}
+
+.evb-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.evb-option-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.evb-verdict {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-green);
+}
+
+.evb-action {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.evb-meta {
+  display: flex;
+  gap: var(--space-lg);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* ---- Multi-Card Tabs ---- */
+.evb-card-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--space-md);
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.evb-card-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.evb-card-tab {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.evb-card-tab:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.evb-card-tab.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: #fff;
+}
+
+.evb-best-card-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-gold, #f59e0b);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+}
+
+.evb-card-panel {
+  animation: fadeSlideIn 0.2s ease;
+}
+
+.evb-card-panel.hidden {
+  display: none;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Smart Split Strategy ---- */
+
+.evb-split-strategy {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.08));
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  animation: fadeSlideIn 0.3s ease;
+}
+
+.evb-split-header {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.evb-split-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.5;
+}
+
+.evb-split-desc strong {
+  color: var(--accent-green, #34d399);
+}
+
+.evb-split-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.evb-split-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.evb-split-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.evb-split-card-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.evb-split-portal {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.evb-split-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.evb-split-pay {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.evb-split-earn {
+  font-size: 0.72rem;
+  color: var(--accent-green, #34d399);
+}
+
+.evb-split-total {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.evb-split-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.evb-split-value {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.evb-split-compare {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.evb-split-benefit {
+  font-weight: 700;
+  color: var(--accent-green, #34d399);
+  font-size: 0.88rem;
+  padding-top: 4px;
+  border-top: 1px dashed rgba(52, 211, 153, 0.3);
+}
+
+.evb-split-benefit-value {
+  font-weight: 800;
+  color: var(--accent-green, #34d399);
+}
+
+/* ---- No Results ---- */
+.fs-no-results {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+  color: var(--text-secondary);
+}
+
+.fs-no-results-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.fs-no-results-hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+}
+
+/* ---- Manual Calculator Collapsible ---- */
+.manual-calc-details {
+  margin-top: var(--space-xl);
+}
+
+.manual-calc-summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: var(--space-md);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  list-style: none;
+}
+
+.manual-calc-summary::-webkit-details-marker {
+  display: none;
+}
+
+.manual-calc-summary::before {
+  content: '▸ ';
+  color: var(--accent-primary);
+}
+
+.manual-calc-details[open] .manual-calc-summary::before {
+  content: '▾ ';
+}
+
+.manual-calc-summary:hover {
+  background: var(--bg-glass-strong);
+  border-color: var(--border-light);
+}
+
+.manual-calc-hint {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.manual-calc-panel {
+  margin-top: var(--space-sm);
+  border-radius: var(--radius-md);
+}
+
+/* ---- Flight Search Responsive ---- */
+@media (max-width: 768px) {
+  .fs-card-main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .fs-pricing {
+    text-align: left;
+    grid-column: 1 / -1;
+  }
+
+  .fs-header {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .fs-toggle-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fs-card-footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .fs-card-main {
+    grid-template-columns: 1fr;
   }
 }
 

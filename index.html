@@ -99,46 +99,96 @@
         <!-- Populated by JS -->
       </section>
 
-      <!-- Flight Maximizer Section -->
+      <!-- Flight Search Section -->
       <section class="flights-section hidden" id="flightsSection">
+        <!-- Route Search Panel -->
         <div class="flight-input-panel">
           <div class="flight-input-header">
-            <h2 class="flight-input-title">✈️ Flight Maximizer</h2>
-            <p class="flight-input-subtitle">Compare Portal vs Transfer vs Direct — find the cheapest way to fly.</p>
+            <h2 class="flight-input-title">✈️ Net-Cost Flight Search</h2>
+            <p class="flight-input-subtitle">Flights ranked by <em>effective cost</em> after credit card rewards — not
+              just sticker price.</p>
           </div>
           <div class="flight-input-row">
-            <div class="search-field flight-airline-field">
-              <label class="search-label" for="airlineInput">Airline</label>
+            <div class="search-field flight-airport-field">
+              <label class="search-label" for="fromAirportInput">From</label>
               <div class="search-input-wrap">
-                <span class="search-icon">✈️</span>
-                <input type="text" id="airlineInput" class="search-input"
-                  placeholder="e.g. Singapore Airlines, Vistara..." autocomplete="off" />
+                <span class="search-icon">🛫</span>
+                <input type="text" id="fromAirportInput" class="search-input" placeholder="e.g. Bengaluru, BLR..."
+                  autocomplete="off" />
               </div>
-              <div class="search-suggestions" id="airlineSuggestions"></div>
+              <div class="search-suggestions" id="fromAirportSuggestions"></div>
             </div>
-            <div class="search-field">
-              <label class="search-label" for="flightCostInput">Ticket Cost (₹)</label>
+            <div class="fs-swap-btn" id="swapAirportsBtn" title="Swap">⇄</div>
+            <div class="search-field flight-airport-field">
+              <label class="search-label" for="toAirportInput">To</label>
               <div class="search-input-wrap">
-                <span class="search-icon">₹</span>
-                <input type="number" id="flightCostInput" class="search-input" placeholder="80000" min="1" />
+                <span class="search-icon">🛬</span>
+                <input type="text" id="toAirportInput" class="search-input" placeholder="e.g. New Delhi, DEL..."
+                  autocomplete="off" />
               </div>
+              <div class="search-suggestions" id="toAirportSuggestions"></div>
             </div>
-            <div class="search-field">
-              <label class="search-label" for="milesInput">Miles Required <span
-                  class="label-optional">(optional)</span></label>
-              <div class="search-input-wrap">
-                <span class="search-icon">🎯</span>
-                <input type="number" id="milesInput" class="search-input" placeholder="e.g. 40000" min="0" />
-              </div>
-            </div>
-            <button class="search-btn flight-calc-btn" id="flightCalcBtn">
-              <span>Maximize</span>
+            <button class="search-btn flight-search-btn" id="flightSearchBtn">
+              <span>Search Flights</span>
               <span class="btn-arrow">→</span>
             </button>
           </div>
+          <div class="fs-toggle-row">
+            <label class="fs-toggle-label" for="netPriceToggle">
+              <span class="fs-toggle-text">🏷️ Show Net Effective Price</span>
+              <div class="fs-toggle-switch">
+                <input type="checkbox" id="netPriceToggle" checked />
+                <span class="fs-toggle-slider"></span>
+              </div>
+            </label>
+            <span class="fs-toggle-hint">Re-ranks flights by price minus reward value</span>
+          </div>
         </div>
 
-        <!-- Flight Results -->
+        <!-- Flight Search Results -->
+        <div class="flight-search-results hidden" id="flightSearchResults">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Manual Calculator (Collapsible) -->
+        <details class="manual-calc-details" id="manualCalcToggle">
+          <summary class="manual-calc-summary">🧮 Manual Flight Calculator <span class="manual-calc-hint">— Enter cost
+              manually for any airline</span></summary>
+          <div class="flight-input-panel manual-calc-panel">
+            <div class="flight-input-row">
+              <div class="search-field flight-airline-field">
+                <label class="search-label" for="airlineInput">Airline</label>
+                <div class="search-input-wrap">
+                  <span class="search-icon">✈️</span>
+                  <input type="text" id="airlineInput" class="search-input"
+                    placeholder="e.g. Singapore Airlines, Vistara..." autocomplete="off" />
+                </div>
+                <div class="search-suggestions" id="airlineSuggestions"></div>
+              </div>
+              <div class="search-field">
+                <label class="search-label" for="flightCostInput">Ticket Cost (₹)</label>
+                <div class="search-input-wrap">
+                  <span class="search-icon">₹</span>
+                  <input type="number" id="flightCostInput" class="search-input" placeholder="80000" min="1" />
+                </div>
+              </div>
+              <div class="search-field">
+                <label class="search-label" for="milesInput">Miles Required <span
+                    class="label-optional">(optional)</span></label>
+                <div class="search-input-wrap">
+                  <span class="search-icon">🎯</span>
+                  <input type="number" id="milesInput" class="search-input" placeholder="e.g. 40000" min="0" />
+                </div>
+              </div>
+              <button class="search-btn flight-calc-btn" id="flightCalcBtn">
+                <span>Maximize</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </div>
+          </div>
+        </details>
+
+        <!-- Flight Results (from manual calc) -->
         <div class="flight-results hidden" id="flightResults">
           <!-- Populated by JS -->
         </div>

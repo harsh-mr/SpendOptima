@@ -2299,6 +2299,366 @@
                     }
                 }
             }
+        ],
+        "airports": [
+            {
+                "code": "BLR",
+                "city": "Bengaluru",
+                "name": "Kempegowda International Airport"
+            },
+            {
+                "code": "DEL",
+                "city": "New Delhi",
+                "name": "Indira Gandhi International Airport"
+            },
+            {
+                "code": "BOM",
+                "city": "Mumbai",
+                "name": "Chhatrapati Shivaji Maharaj International Airport"
+            },
+            {
+                "code": "SIN",
+                "city": "Singapore",
+                "name": "Changi Airport"
+            },
+            {
+                "code": "LHR",
+                "city": "London",
+                "name": "Heathrow Airport"
+            },
+            {
+                "code": "DXB",
+                "city": "Dubai",
+                "name": "Dubai International Airport"
+            },
+            {
+                "code": "DOH",
+                "city": "Doha",
+                "name": "Hamad International Airport"
+            },
+            {
+                "code": "BKK",
+                "city": "Bangkok",
+                "name": "Suvarnabhumi Airport"
+            },
+            {
+                "code": "HYD",
+                "city": "Hyderabad",
+                "name": "Rajiv Gandhi International Airport"
+            },
+            {
+                "code": "MAA",
+                "city": "Chennai",
+                "name": "Chennai International Airport"
+            },
+            {
+                "code": "CCU",
+                "city": "Kolkata",
+                "name": "Netaji Subhas Chandra Bose International Airport"
+            },
+            {
+                "code": "GOI",
+                "city": "Goa",
+                "name": "Manohar International Airport"
+            }
+        ],
+        "sample_flights": [
+            {
+                "id": "6E-201",
+                "airline_id": "indigo",
+                "airline_name": "IndiGo",
+                "flight_no": "6E 201",
+                "from": "BLR",
+                "to": "DEL",
+                "departure": "06:15",
+                "arrival": "09:00",
+                "duration": "2h 45m",
+                "price": 4850,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "AI-501",
+                "airline_id": "air_india",
+                "airline_name": "Air India",
+                "flight_no": "AI 501",
+                "from": "BLR",
+                "to": "DEL",
+                "departure": "08:30",
+                "arrival": "11:20",
+                "duration": "2h 50m",
+                "price": 6200,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "UK-811",
+                "airline_id": "vistara",
+                "airline_name": "Vistara",
+                "flight_no": "UK 811",
+                "from": "BLR",
+                "to": "DEL",
+                "departure": "10:00",
+                "arrival": "12:45",
+                "duration": "2h 45m",
+                "price": 7500,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "SG-301",
+                "airline_id": "spicejet",
+                "airline_name": "SpiceJet",
+                "flight_no": "SG 301",
+                "from": "BLR",
+                "to": "DEL",
+                "departure": "14:20",
+                "arrival": "17:10",
+                "duration": "2h 50m",
+                "price": 4200,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "6E-202",
+                "airline_id": "indigo",
+                "airline_name": "IndiGo",
+                "flight_no": "6E 202",
+                "from": "BLR",
+                "to": "DEL",
+                "departure": "19:30",
+                "arrival": "22:15",
+                "duration": "2h 45m",
+                "price": 5100,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "SQ-423",
+                "airline_id": "singapore_airlines",
+                "airline_name": "Singapore Airlines",
+                "flight_no": "SQ 423",
+                "from": "BLR",
+                "to": "SIN",
+                "departure": "00:50",
+                "arrival": "07:45",
+                "duration": "4h 25m",
+                "price": 18500,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "AI-381",
+                "airline_id": "air_india",
+                "airline_name": "Air India",
+                "flight_no": "AI 381",
+                "from": "BLR",
+                "to": "SIN",
+                "departure": "09:15",
+                "arrival": "16:40",
+                "duration": "4h 55m",
+                "price": 14200,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "6E-051",
+                "airline_id": "indigo",
+                "airline_name": "IndiGo",
+                "flight_no": "6E 051",
+                "from": "BLR",
+                "to": "SIN",
+                "departure": "12:30",
+                "arrival": "19:50",
+                "duration": "4h 50m",
+                "price": 12800,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "SQ-423B",
+                "airline_id": "singapore_airlines",
+                "airline_name": "Singapore Airlines",
+                "flight_no": "SQ 423",
+                "from": "BLR",
+                "to": "SIN",
+                "departure": "00:50",
+                "arrival": "07:45",
+                "duration": "4h 25m",
+                "price": 42000,
+                "class": "Business",
+                "stops": 0
+            },
+            {
+                "id": "SQ-423F",
+                "airline_id": "singapore_airlines",
+                "airline_name": "Singapore Airlines",
+                "flight_no": "SQ 423",
+                "from": "BLR",
+                "to": "SIN",
+                "departure": "00:50",
+                "arrival": "07:45",
+                "duration": "4h 25m",
+                "price": 250000,
+                "class": "First",
+                "stops": 0
+            },
+            {
+                "id": "BA-118",
+                "airline_id": "british_airways",
+                "airline_name": "British Airways",
+                "flight_no": "BA 118",
+                "from": "BOM",
+                "to": "LHR",
+                "departure": "02:10",
+                "arrival": "07:30",
+                "duration": "9h 50m",
+                "price": 52000,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "AI-131",
+                "airline_id": "air_india",
+                "airline_name": "Air India",
+                "flight_no": "AI 131",
+                "from": "BOM",
+                "to": "LHR",
+                "departure": "01:30",
+                "arrival": "06:50",
+                "duration": "9h 50m",
+                "price": 45000,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "EK-501",
+                "airline_id": "emirates",
+                "airline_name": "Emirates",
+                "flight_no": "EK 501",
+                "from": "BOM",
+                "to": "LHR",
+                "departure": "04:00",
+                "arrival": "13:20",
+                "duration": "13h 50m",
+                "price": 38000,
+                "class": "Economy",
+                "stops": 1,
+                "via": "DXB"
+            },
+            {
+                "id": "QR-557",
+                "airline_id": "qatar_airways",
+                "airline_name": "Qatar Airways",
+                "flight_no": "QR 557",
+                "from": "BOM",
+                "to": "LHR",
+                "departure": "03:30",
+                "arrival": "12:50",
+                "duration": "13h 50m",
+                "price": 40000,
+                "class": "Economy",
+                "stops": 1,
+                "via": "DOH"
+            },
+            {
+                "id": "BA-118B",
+                "airline_id": "british_airways",
+                "airline_name": "British Airways",
+                "flight_no": "BA 118",
+                "from": "BOM",
+                "to": "LHR",
+                "departure": "02:10",
+                "arrival": "07:30",
+                "duration": "9h 50m",
+                "price": 185000,
+                "class": "Business",
+                "stops": 0
+            },
+            {
+                "id": "EK-511",
+                "airline_id": "emirates",
+                "airline_name": "Emirates",
+                "flight_no": "EK 511",
+                "from": "DEL",
+                "to": "DXB",
+                "departure": "04:50",
+                "arrival": "07:00",
+                "duration": "3h 40m",
+                "price": 15000,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "AI-995",
+                "airline_id": "air_india",
+                "airline_name": "Air India",
+                "flight_no": "AI 995",
+                "from": "DEL",
+                "to": "DXB",
+                "departure": "10:30",
+                "arrival": "12:30",
+                "duration": "3h 30m",
+                "price": 12500,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "6E-023",
+                "airline_id": "indigo",
+                "airline_name": "IndiGo",
+                "flight_no": "6E 023",
+                "from": "DEL",
+                "to": "DXB",
+                "departure": "16:00",
+                "arrival": "18:10",
+                "duration": "3h 40m",
+                "price": 10800,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "EK-511B",
+                "airline_id": "emirates",
+                "airline_name": "Emirates",
+                "flight_no": "EK 511",
+                "from": "DEL",
+                "to": "DXB",
+                "departure": "04:50",
+                "arrival": "07:00",
+                "duration": "3h 40m",
+                "price": 65000,
+                "class": "Business",
+                "stops": 0
+            },
+            {
+                "id": "TG-316",
+                "airline_id": "thai_airways",
+                "airline_name": "Thai Airways",
+                "flight_no": "TG 316",
+                "from": "BLR",
+                "to": "BKK",
+                "departure": "10:40",
+                "arrival": "16:10",
+                "duration": "3h 0m",
+                "price": 16500,
+                "class": "Economy",
+                "stops": 0
+            },
+            {
+                "id": "6E-097",
+                "airline_id": "indigo",
+                "airline_name": "IndiGo",
+                "flight_no": "6E 097",
+                "from": "BLR",
+                "to": "BKK",
+                "departure": "07:00",
+                "arrival": "12:50",
+                "duration": "3h 20m",
+                "price": 11200,
+                "class": "Economy",
+                "stops": 0
+            }
         ]
     }
 }

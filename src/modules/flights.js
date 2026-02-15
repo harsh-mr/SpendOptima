@@ -120,13 +120,19 @@ export class FlightMaximizer {
 
     /**
      * Cap warning check
+     * @param {string} cardId
+     * @param {number} ticketCost - Full ticket cost
+     * @param {number|null} milesValueINR - Cash value of miles being redeemed (reduces effective cash)
      */
-    checkCapWarning(cardId, ticketCost) {
+    checkCapWarning(cardId, ticketCost, milesValueINR = null) {
         const cap = this.caps[cardId];
         if (!cap || !cap.monthly_cap_inr) return null;
 
-        if (ticketCost > cap.monthly_cap_inr) {
-            const overCap = ticketCost - cap.monthly_cap_inr;
+        // If miles are being redeemed, the cash portion is lower
+        const effectiveCashCost = milesValueINR ? Math.max(0, ticketCost - milesValueINR) : ticketCost;
+
+        if (effectiveCashCost > cap.monthly_cap_inr) {
+            const overCap = effectiveCashCost - cap.monthly_cap_inr;
             const today = new Date();
             const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
             const nextMonthStr = nextMonth.toLocaleDateString('en-IN', { month: 'long', day: 'numeric' });
@@ -136,10 +142,25 @@ export class FlightMaximizer {
                 capAmount: cap.monthly_cap_inr,
                 overCapAmount: overCap,
                 totalTicket: ticketCost,
+                effectiveCashCost,
+                milesDeduction: milesValueINR || 0,
                 resetDate: nextMonthStr,
                 portal: cap.portal,
                 multiplier: cap.multiplier,
-                splitSuggestion: this._generateSplitSuggestion(ticketCost, cap, nextMonthStr)
+                splitSuggestion: this._generateSplitSuggestion(effectiveCashCost, cap, nextMonthStr),
+                cardSplit: this._generateCardSplitSuggestion(cardId, effectiveCashCost)
+            };
+        }
+
+        // If miles bring it under cap, show good news
+        if (milesValueINR && ticketCost > cap.monthly_cap_inr && effectiveCashCost <= cap.monthly_cap_inr) {
+            return {
+                hasCap: false,
+                milesHelped: true,
+                milesDeduction: milesValueINR,
+                effectiveCashCost,
+                capAmount: cap.monthly_cap_inr,
+                portal: cap.portal
             };
         }
 
@@ -162,18 +183,34 @@ export class FlightMaximizer {
 
         // Route 1: Portal Route (SmartBuy / Travel Edge)
         const portal = this.portals.find(p => p.supported_cards.includes(card.id));
+
+        // Pre-compute miles value for cap-aware calculations
+        let milesValueINR = null;
+        if (milesRequired) {
+            const transfers = this.transferPartners[card.id] || [];
+            const transfer = transfers.find(t => t.airline_id === airline.id);
+            if (transfer) {
+                milesValueINR = Math.round(milesRequired * transfer.estimated_value_inr);
+            }
+        }
+
         if (portal) {
             const multiplierData = portal.reward_multiplier[card.id];
             if (multiplierData) {
-                let portalReturn = ticketCost * multiplierData.rate;
+                // Use effective cash cost (after miles deduction) for portal return calc
+                const effectiveCashCost = milesValueINR ? Math.max(0, ticketCost - milesValueINR) : ticketCost;
+                let portalReturn = effectiveCashCost * multiplierData.rate;
 
-                // Check cap
-                if (cardCap && cardCap.monthly_cap_inr && ticketCost > cardCap.monthly_cap_inr) {
+                // Check cap against effective cash cost
+                if (cardCap && cardCap.monthly_cap_inr && effectiveCashCost > cardCap.monthly_cap_inr) {
                     const cappedReturn = cardCap.monthly_cap_inr * multiplierData.rate;
-                    const overCapReturn = (ticketCost - cardCap.monthly_cap_inr) * card.base_reward_rate;
+                    const overCapReturn = (effectiveCashCost - cardCap.monthly_cap_inr) * card.base_reward_rate;
                     portalReturn = cappedReturn + overCapReturn;
 
-                    result.capWarning = this.checkCapWarning(card.id, ticketCost);
+                    result.capWarning = this.checkCapWarning(card.id, ticketCost, milesValueINR);
+                } else if (milesValueINR && cardCap && cardCap.monthly_cap_inr && ticketCost > cardCap.monthly_cap_inr) {
+                    // Miles brought effective cash under cap — show positive feedback
+                    result.capWarning = this.checkCapWarning(card.id, ticketCost, milesValueINR);
                 }
 
                 result.portalRoute = {
@@ -247,9 +284,126 @@ export class FlightMaximizer {
                 strategy: 'split_cap',
                 leg1: cap.monthly_cap_inr,
                 leg2: ticketCost - cap.monthly_cap_inr,
-                message: `Book ₹${cap.monthly_cap_inr.toLocaleString('en-IN')} worth this month (cap limit). Book remaining ₹${(ticketCost - cap.monthly_cap_inr).toLocaleString('en-IN')} on ${resetDate} to maximize rewards.`
+                message: `Or split by month: Book ₹${cap.monthly_cap_inr.toLocaleString('en-IN')} this month, remaining ₹${(ticketCost - cap.monthly_cap_inr).toLocaleString('en-IN')} on ${resetDate}.`
             };
         }
+    }
+
+    /**
+     * Generate a cross-card split suggestion using other wallet cards
+     */
+    _generateCardSplitSuggestion(primaryCardId, ticketCost) {
+        const walletCards = this.wallet.getCards();
+        if (walletCards.length < 2) return null;
+
+        const primaryCard = this.data.cards.find(c => c.id === primaryCardId);
+        if (!primaryCard) return null;
+
+        // Build list of portal-capable wallet cards with rates and caps
+        const portalCards = [];
+        for (const cardId of walletCards) {
+            const card = this.data.cards.find(c => c.id === cardId);
+            if (!card) continue;
+
+            const portal = this.portals.find(p => p.supported_cards.includes(card.id));
+            if (!portal) continue;
+
+            const multiplierData = portal.reward_multiplier[card.id];
+            if (!multiplierData) continue;
+
+            const cap = this.caps[card.id];
+            const capAmount = (cap && cap.monthly_cap_inr) ? cap.monthly_cap_inr : null;
+
+            portalCards.push({
+                card,
+                portal: portal.name,
+                rate: multiplierData.rate,
+                label: multiplierData.label,
+                capAmount,
+                baseRate: card.base_reward_rate || 0
+            });
+        }
+
+        if (portalCards.length < 2) return null;
+
+        // Sort by portal rate descending
+        portalCards.sort((a, b) => b.rate - a.rate);
+
+        const bestBaseRate = portalCards[0].baseRate;
+
+        // Greedy allocation — only allocate to cards whose portal rate beats best base rate
+        let remaining = ticketCost;
+        const splits = [];
+        let totalEarnings = 0;
+
+        for (const pc of portalCards) {
+            if (remaining <= 0) break;
+            if (pc.rate <= bestBaseRate && pc !== portalCards[0]) continue;
+
+            let allocate;
+            if (pc.capAmount && remaining > pc.capAmount) {
+                allocate = pc.capAmount;
+            } else {
+                allocate = remaining;
+            }
+
+            const earnings = Math.round(allocate * pc.rate);
+            splits.push({
+                card: pc.card,
+                portal: pc.portal,
+                amount: allocate,
+                rate: pc.rate,
+                label: pc.label,
+                earnings
+            });
+            totalEarnings += earnings;
+            remaining -= allocate;
+        }
+
+        // Remaining via best base-rate card
+        if (remaining > 0) {
+            const bestBase = walletCards
+                .map(id => this.data.cards.find(c => c.id === id))
+                .filter(Boolean)
+                .sort((a, b) => (b.base_reward_rate || 0) - (a.base_reward_rate || 0))[0];
+
+            if (bestBase) {
+                const earnings = Math.round(remaining * (bestBase.base_reward_rate || 0));
+                splits.push({
+                    card: bestBase,
+                    portal: 'Direct Swipe',
+                    amount: remaining,
+                    rate: bestBase.base_reward_rate || 0,
+                    label: 'Base rate',
+                    earnings
+                });
+                totalEarnings += earnings;
+            }
+        }
+
+        // Calculate single-card earnings for comparison
+        const primaryPortal = portalCards.find(pc => pc.card.id === primaryCardId);
+        let singleEarnings = 0;
+        if (primaryPortal) {
+            if (primaryPortal.capAmount && ticketCost > primaryPortal.capAmount) {
+                singleEarnings = Math.round(
+                    primaryPortal.capAmount * primaryPortal.rate +
+                    (ticketCost - primaryPortal.capAmount) * primaryPortal.baseRate
+                );
+            } else {
+                singleEarnings = Math.round(ticketCost * primaryPortal.rate);
+            }
+        }
+
+        const benefit = totalEarnings - singleEarnings;
+        if (benefit <= 100 || splits.length < 2) return null;
+
+        return {
+            splits,
+            totalEarnings,
+            singleEarnings,
+            benefit
+        };
     }
 }
 
@@ -326,6 +480,55 @@ export class FlightResultsRenderer {
 
         let capHTML = '';
         if (capWarning && capWarning.hasCap) {
+            // Miles deduction info
+            let milesDeductionHTML = '';
+            if (capWarning.milesDeduction > 0) {
+                milesDeductionHTML = `
+                    <div class="cap-miles-note">
+                        <span class="cap-miles-icon">✈️</span>
+                        <p>After redeeming miles (₹${capWarning.milesDeduction.toLocaleString('en-IN')} value), cash portion is ₹${capWarning.effectiveCashCost.toLocaleString('en-IN')}</p>
+                    </div>
+                `;
+            }
+
+            // Build card split HTML if available
+            let cardSplitHTML = '';
+            if (capWarning.cardSplit) {
+                const cs = capWarning.cardSplit;
+                cardSplitHTML = `
+                    <div class="cap-card-split">
+                        <div class="cap-split-icon">💡</div>
+                        <div class="cap-split-content">
+                            <div class="cap-split-title">Split across your cards to earn <strong>₹${cs.benefit.toLocaleString('en-IN')} more</strong></div>
+                            <div class="cap-split-rows">
+                                ${cs.splits.map(s => `
+                                    <div class="cap-split-row">
+                                        <span class="cap-split-card">💳 ${s.card.name}</span>
+                                        <span class="cap-split-portal">${s.portal}</span>
+                                        <span class="cap-split-amount">₹${s.amount.toLocaleString('en-IN')}</span>
+                                        <span class="cap-split-earn">→ ₹${s.earnings.toLocaleString('en-IN')} (${(s.rate * 100).toFixed(1)}%)</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="cap-split-total">
+                                Total: <strong>₹${cs.totalEarnings.toLocaleString('en-IN')}</strong> vs ₹${cs.singleEarnings.toLocaleString('en-IN')} on single card
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Monthly split as secondary option
+            let monthlySplitHTML = '';
+            if (capWarning.splitSuggestion) {
+                monthlySplitHTML = `
+                    <div class="cap-monthly-split">
+                        <span class="cap-monthly-icon">📅</span>
+                        <p>${capWarning.splitSuggestion.message}</p>
+                    </div>
+                `;
+            }
+
             capHTML = `
                 <div class="cap-warning">
                     <div class="cap-warning-icon">⚠️</div>
@@ -335,12 +538,24 @@ export class FlightResultsRenderer {
                             Your <strong>${capWarning.portal}</strong> ${capWarning.multiplier} bonus caps at <strong>₹${capWarning.capAmount.toLocaleString('en-IN')}</strong>/month.
                             You will earn <strong>ZERO bonus points</strong> on the remaining ₹${capWarning.overCapAmount.toLocaleString('en-IN')}.
                         </p>
-                        ${capWarning.splitSuggestion ? `
-                            <div class="cap-split-suggestion">
-                                <span class="cap-split-icon">💡</span>
-                                <p>${capWarning.splitSuggestion.message}</p>
-                            </div>
-                        ` : ''}
+                        ${milesDeductionHTML}
+                        ${cardSplitHTML}
+                        ${monthlySplitHTML}
+                    </div>
+                </div>
+            `;
+        } else if (capWarning && capWarning.milesHelped) {
+            // Miles brought the amount under cap — show good news
+            capHTML = `
+                <div class="cap-warning" style="border-color: rgba(52, 211, 153, 0.25); background: linear-gradient(135deg, rgba(52, 211, 153, 0.08), rgba(96, 165, 250, 0.08));">
+                    <div class="cap-warning-icon">✅</div>
+                    <div class="cap-warning-content">
+                        <div class="cap-warning-title" style="color: var(--accent-green);">Miles Keep You Under Cap!</div>
+                        <p class="cap-warning-text">
+                            Full ticket exceeds <strong>${capWarning.portal}</strong> ₹${capWarning.capAmount.toLocaleString('en-IN')}/month cap,
+                            but by redeeming miles (₹${capWarning.milesDeduction.toLocaleString('en-IN')} value), your cash portion is only
+                            <strong>₹${capWarning.effectiveCashCost.toLocaleString('en-IN')}</strong> — within the cap! Full bonus rewards apply.
+                        </p>
                     </div>
                 </div>
             `;

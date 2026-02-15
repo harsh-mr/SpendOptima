@@ -8,6 +8,7 @@ import { Calculator } from './modules/calculator.js';
 import { ResultsRenderer } from './modules/results.js';
 import { Router } from './modules/router.js';
 import { FlightMaximizer, FlightResultsRenderer } from './modules/flights.js';
+import { FlightSearchEngine, FlightSearchRenderer } from './modules/flight-search.js';
 import './styles/index.css';
 
 let data = null;
@@ -18,7 +19,10 @@ let results = null;
 let router = null;
 let flightMax = null;
 let flightRenderer = null;
+let flightSearch = null;
+let flightSearchRenderer = null;
 let currentMode = 'merchant';
+let lastSearchedFlights = [];
 
 async function init() {
     // Fetch master rules
@@ -36,6 +40,8 @@ async function init() {
     results = new ResultsRenderer(wallet);
     flightMax = new FlightMaximizer(data, wallet);
     flightRenderer = new FlightResultsRenderer();
+    flightSearch = new FlightSearchEngine(data, wallet);
+    flightSearchRenderer = new FlightSearchRenderer();
 
     // Search — on merchant selection, calculate
     search = new SearchEngine(data, (searchItem, amount) => {
@@ -64,8 +70,11 @@ async function init() {
     // ---- Mode Tabs ----
     setupModeTabs();
 
-    // ---- Flight Maximizer ----
+    // ---- Flight Maximizer (Manual) ----
     setupFlightModule();
+
+    // ---- Net-Cost Flight Search ----
+    setupFlightSearch();
 
     // Router
     router = new Router();
@@ -268,6 +277,183 @@ function setupFlightModule() {
         if (!e.target.closest('.flight-airline-field')) {
             airlineSuggestions.classList.remove('visible');
             airlineSuggestions.style.display = 'none';
+        }
+    });
+}
+
+// ---- Net-Cost Flight Search Setup ----
+function setupFlightSearch() {
+    const fromInput = document.getElementById('fromAirportInput');
+    const toInput = document.getElementById('toAirportInput');
+    const fromSuggestions = document.getElementById('fromAirportSuggestions');
+    const toSuggestions = document.getElementById('toAirportSuggestions');
+    const searchBtn = document.getElementById('flightSearchBtn');
+    const swapBtn = document.getElementById('swapAirportsBtn');
+    const netPriceToggle = document.getElementById('netPriceToggle');
+
+    let selectedFrom = null;
+    let selectedTo = null;
+
+    // Airport fuzzy search using Fuse
+    const airportFuse = new Fuse(flightSearch.airportSearchItems, {
+        keys: [
+            { name: 'name', weight: 2 },
+            { name: 'code', weight: 1.5 },
+            { name: 'city', weight: 1 }
+        ],
+        threshold: 0.4,
+        includeScore: true
+    });
+
+    // Wire From input
+    setupAirportInput(fromInput, fromSuggestions, (item) => {
+        selectedFrom = item;
+        fromInput.value = item.name;
+    });
+
+    // Wire To input
+    setupAirportInput(toInput, toSuggestions, (item) => {
+        selectedTo = item;
+        toInput.value = item.name;
+    });
+
+    function setupAirportInput(input, suggestionsEl, onSelect) {
+        let results = [];
+        let selectedIdx = -1;
+
+        input.addEventListener('input', () => {
+            const query = input.value.trim();
+            if (query.length < 1) {
+                suggestionsEl.classList.remove('visible');
+                suggestionsEl.style.display = 'none';
+                return;
+            }
+
+            results = airportFuse.search(query).slice(0, 6);
+            selectedIdx = -1;
+
+            if (results.length === 0) {
+                suggestionsEl.classList.remove('visible');
+                suggestionsEl.style.display = 'none';
+                return;
+            }
+
+            suggestionsEl.innerHTML = results.map((r, i) => `
+                <div class="suggestion-item ${i === selectedIdx ? 'active' : ''}" data-index="${i}">
+                    <span class="suggestion-name">${r.item.name}</span>
+                    <span class="suggestion-category">${r.item.fullName}</span>
+                </div>
+            `).join('');
+
+            suggestionsEl.style.display = 'block';
+            suggestionsEl.classList.add('visible');
+
+            suggestionsEl.querySelectorAll('.suggestion-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const idx = parseInt(item.dataset.index);
+                    onSelect(results[idx].item);
+                    suggestionsEl.classList.remove('visible');
+                    suggestionsEl.style.display = 'none';
+                });
+            });
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (!results.length) return;
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedIdx = Math.min(selectedIdx + 1, results.length - 1);
+                updateHighlight(suggestionsEl, selectedIdx);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedIdx = Math.max(selectedIdx - 1, 0);
+                updateHighlight(suggestionsEl, selectedIdx);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedIdx >= 0) {
+                    onSelect(results[selectedIdx].item);
+                    suggestionsEl.classList.remove('visible');
+                    suggestionsEl.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    function updateHighlight(container, idx) {
+        container.querySelectorAll('.suggestion-item').forEach((item, i) => {
+            item.classList.toggle('active', i === idx);
+        });
+    }
+
+    // Swap airports
+    swapBtn.addEventListener('click', () => {
+        const tempVal = fromInput.value;
+        const tempSel = selectedFrom;
+        fromInput.value = toInput.value;
+        selectedFrom = selectedTo;
+        toInput.value = tempVal;
+        selectedTo = tempSel;
+    });
+
+    // Search flights
+    searchBtn.addEventListener('click', () => runFlightSearch());
+
+    fromInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && selectedFrom) toInput.focus();
+    });
+    toInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && selectedTo) runFlightSearch();
+    });
+
+    // Net Price Toggle
+    netPriceToggle.addEventListener('change', () => {
+        if (lastSearchedFlights.length > 0) {
+            const showNet = netPriceToggle.checked;
+            const ranked = flightSearch.rankByNetCost(lastSearchedFlights, showNet);
+            flightSearchRenderer.renderSearchResults(ranked, showNet);
+        }
+    });
+
+    async function runFlightSearch() {
+        if (!selectedFrom) {
+            fromInput.focus();
+            return;
+        }
+        if (!selectedTo) {
+            toInput.focus();
+            return;
+        }
+
+        const flights = await flightSearch.search(selectedFrom.code, selectedTo.code);
+        lastSearchedFlights = flights;
+
+        const showNet = netPriceToggle.checked;
+        const ranked = flightSearch.rankByNetCost(flights, showNet);
+        flightSearchRenderer.renderSearchResults(ranked, showNet);
+    }
+
+    // Earn vs Burn event delegation — multi-card analysis
+    document.getElementById('flightSearchResults').addEventListener('earn-vs-burn', (e) => {
+        const flightId = e.detail.flightId;
+        const flight = lastSearchedFlights.find(f => f.id === flightId);
+        if (!flight) return;
+
+        // Get all wallet cards (fallback to all cards if wallet is empty)
+        const walletCards = wallet.getCards();
+        const cardIds = walletCards.length > 0 ? walletCards : data.cards.map(c => c.id);
+        if (cardIds.length === 0) return;
+
+        const multiResult = flightSearch.getMultiCardEarnVsBurn(flight, cardIds);
+        flightSearchRenderer.renderEarnVsBurn(flightId, multiResult);
+    });
+
+    // Close airport suggestions on outside click
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.flight-airport-field')) {
+            fromSuggestions.classList.remove('visible');
+            fromSuggestions.style.display = 'none';
+            toSuggestions.classList.remove('visible');
+            toSuggestions.style.display = 'none';
         }
     });
 }
